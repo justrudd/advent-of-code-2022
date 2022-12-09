@@ -9,4 +9,6 @@
  */
 
 rootProject.name = "advent-of-code-2022"
-include("app", "list", "utilities")
+include(
+    "day01",
+)

@@ -9,11 +9,9 @@ plugins {
 }
 
 dependencies {
-    implementation("org.apache.commons:commons-text")
-    implementation(project(":utilities"))
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("dev.justrudd.aoc2022.app.AppKt")
+    mainClass.set("dev.justrudd.aoc2022.day01.MainKt")
 }

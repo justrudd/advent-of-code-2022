@@ -115,13 +115,16 @@ data class Round(val elfChoice: Choice, val myChoice: Choice) {
         fun fromPartOneString(s: String) =
             parseChoiceChars(s).run {
                 val (elfChar, myChar) = this
+
                 Round(Choice.fromChar(elfChar), Choice.fromChar(myChar))
             }
 
         fun fromPartTwoString(s: String) =
             parseChoiceChars(s).run {
-                val elfChoice = Choice.fromChar(first)
-                val myChoice = ExpectedOutcome.fromChar(second).choose(elfChoice)
+                val (elfChar, eoChar) = this
+
+                val elfChoice = Choice.fromChar(elfChar)
+                val myChoice = ExpectedOutcome.fromChar(eoChar).choose(elfChoice)
 
                 Round(elfChoice, myChoice)
             }
